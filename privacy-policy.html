@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FieldProof — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 720px; margin: 0 auto; padding: 32px 20px 64px;
+    line-height: 1.65; color: #262624; background: #FAF9F5;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #F5F4EF; background: #262624; }
+    h1, h2 { color: #F5F4EF; }
+  }
+  h1 { font-size: 1.8rem; margin-bottom: 0.2em; }
+  h2 { font-size: 1.2rem; margin-top: 2em; }
+  .updated { color: #888; font-size: 0.9rem; }
+  ul { padding-left: 1.4em; }
+  a { color: #D97757; }
+</style>
+</head>
+<body>
+
+<h1>FieldProof — Privacy Policy</h1>
+<p class="updated">Last updated: June 11, 2026</p>
+
+<p>FieldProof ("we", "us", "our") is a mobile application for capturing cryptographically
+verified photo evidence. This Privacy Policy explains what information we collect, how we use
+it, and your rights over your data.</p>
+
+<h2>1. Information We Collect</h2>
+<p><strong>Account Information.</strong> When you register, we collect your email address and
+full name. Your name appears in the watermark of photos you capture, establishing your identity
+as the photographer.</p>
+<p><strong>Evidence Metadata.</strong> When you take a verified photo, we record:</p>
+<ul>
+  <li>GPS coordinates and reverse-geocoded address at the moment of capture</li>
+  <li>Server-verified timestamp</li>
+  <li>Device model and operating system version</li>
+  <li>A device identifier (used to link your device's public signing key)</li>
+  <li>A SHA-256 cryptographic hash of your photo</li>
+  <li>Project name and optional notes you enter</li>
+</ul>
+<p><strong>Device Signing Key.</strong> A cryptographic key pair is generated on your device.
+The private key never leaves your device. The public key is registered in our database so third
+parties can verify that photos came from a FieldProof device.</p>
+
+<h2>2. What We Do NOT Collect</h2>
+<ul>
+  <li>Your actual photo files — photos are stored only on your device and are never uploaded to our servers.</li>
+  <li>Advertising identifiers or device tracking IDs.</li>
+  <li>Contacts, messages, or other apps' data.</li>
+  <li>Continuous background location — location is accessed only during photo capture.</li>
+  <li>Browsing history or behavioral analytics.</li>
+</ul>
+
+<h2>3. How We Use Your Information</h2>
+<ul>
+  <li>To authenticate your account and protect your evidence.</li>
+  <li>To embed verified identity (name, GPS, timestamp) into the watermark burned onto each photo.</li>
+  <li>To allow third parties to independently verify the authenticity of photos you share, by checking the cryptographic signature against our device key registry.</li>
+  <li>To provide the offline sync queue so captures saved without network access are synced when connectivity returns.</li>
+</ul>
+
+<h2>4. Data Storage and Security</h2>
+<p>Evidence metadata and account information are stored on Supabase infrastructure (PostgreSQL
+database hosted on AWS). All data is protected by:</p>
+<ul>
+  <li>TLS encryption in transit</li>
+  <li>Row-Level Security (RLS) policies ensuring you can only access your own data</li>
+  <li>Hardware-backed secure storage for your device's private signing key (Android Keystore / iOS Secure Enclave)</li>
+</ul>
+<p>Your photos remain on your device in the app's private storage directory and are not
+accessible to other apps.</p>
+
+<h2>5. Data Sharing</h2>
+<p>We share data with the following third-party service provider:</p>
+<p><strong>Supabase</strong> — Database hosting and user authentication infrastructure.
+Supabase processes account information and evidence metadata on our behalf.
+<a href="https://supabase.com/privacy">Supabase Privacy Policy</a></p>
+<p>We do not sell, rent, or share your personal data with any other third parties for commercial
+or marketing purposes. We do not use advertising networks or analytics SDKs.</p>
+<p><strong>Verification Lookups.</strong> Your device's public key and device ID are publicly
+readable in our database specifically to enable independent verification. Verifiers can also
+check whether a photo's cryptographic hash matches a recorded capture; this returns only a
+yes/no answer. No personal information (name, email, GPS history) is exposed by these lookups.</p>
+
+<h2>6. Permissions We Request</h2>
+<ul>
+  <li><strong>Camera</strong> — Required to capture photos. Accessed only when you actively use the Capture screen.</li>
+  <li><strong>Location (Fine &amp; Coarse)</strong> — Required to embed GPS coordinates in evidence watermarks. Read only while the Capture screen is open. We do not request background location.</li>
+  <li><strong>Photo Library (Read)</strong> — Required to select photos for the Verify feature. We do not modify or upload photos from your library.</li>
+  <li><strong>Storage</strong> — Required to save your captured evidence photos to your device's app storage.</li>
+</ul>
+
+<h2>7. Your Rights and Choices</h2>
+<p><strong>Access.</strong> You can view all your evidence photos and metadata within the app.</p>
+<p><strong>Deletion of Evidence.</strong> You can delete individual photos or entire projects
+from within the app. Deleted evidence records are permanently removed from our database.</p>
+<p><strong>Account Deletion.</strong> You can permanently delete your account and all associated
+data via Settings &rarr; Delete Account in the app. This removes your account, all evidence metadata,
+all projects, and your device key registrations from our servers. This action is irreversible.</p>
+<p><strong>Data Export.</strong> To request a copy of your data, contact us at
+savak21@gmail.com.</p>
+<p><strong>Correction.</strong> To correct your name or email, contact us at
+savak21@gmail.com.</p>
+
+<h2>8. Data Retention</h2>
+<p>We retain your account information and evidence metadata for as long as your account is
+active. When you delete your account, all data is permanently deleted from our servers within
+30 days. Backups are purged on the same schedule.</p>
+<p>Photos stored on your device are not affected by account deletion — you must delete them
+manually from your device if desired.</p>
+
+<h2>9. Children's Privacy</h2>
+<p>FieldProof is not directed at children under the age of 13, and we do not knowingly collect
+personal information from children under 13. If you believe a child under 13 has provided us
+with personal information, please contact us at savak21@gmail.com.</p>
+
+<h2>10. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. We will notify you of material changes
+by displaying a notice in the app before the change takes effect. Continued use of the app after
+a policy update constitutes acceptance of the new policy.</p>
+
+<h2>11. Contact Us</h2>
+<p>For privacy inquiries, data requests, or concerns:<br>
+Email: savak21@gmail.com<br>
+Support: savak21@gmail.com</p>
+
+</body>
+</html>
